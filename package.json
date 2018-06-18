@@ -4,9 +4,9 @@
   "description": "Boilerplate for JS projects",
   "main": "index.js",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
+    "prestart": "babel-node buildScripts/startMessage.js",
     "start":"npm-run-all --parallel security-check open:src",
-    "open:src":"node buildScripts/server.js",
+    "open:src":"babel-node buildScripts/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "security-check":"nsp check",
     "share":"npm-run-all --parallel localtunel opne:src",
