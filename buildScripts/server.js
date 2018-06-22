@@ -1,8 +1,17 @@
-const express = require('express');
-const path = require('path');
-const open = require('open');
+import webpack from 'webpack';
+import config from '../webpack.config.dev';
+import express from 'express';
+import path from 'path';
+import open from  'open';
 const app = express();
 const port = process.env.PORT || 3000;
+
+const compiler = webpack(config);
+app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+}));
+
 
 
 
