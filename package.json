@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start":"npm-run-all --parallel security-check open:src",
+    "start":"npm-run-all --parallel security-check open:src test:watch",
     "open:src":"babel-node buildScripts/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "security-check":"nsp check",
     "share":"npm-run-all --parallel localtunel opne:src",
-    "localtunnel": "lt --port 3000"
+    "localtunnel": "lt --port 3000",
+    "test":"mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+    "test:watch":"npm run test -- --watch"
   },
   "repository": {
     "type": "git",
