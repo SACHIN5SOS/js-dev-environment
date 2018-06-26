@@ -6,7 +6,7 @@
 ###### Transpiler:      Bible
 ###### Module Format:   ES6
 ###### Bundler:         Webpack
-###### Linter:          ESLint
+###### Linter:          ESLint(Already integrated with Visual Studio Code)
 ###### Testing:         Mocha
 ###### Continuous Integration:  Travis(for linux and mac),  Appveyor(for windows)
 ###### Mock Https:      Include JSON-Schema Faker
